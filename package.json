@@ -3,19 +3,23 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test:release": "semantic-release --dry-run",
-    "test:commits": "commitlint --from HEAD~1"
+    "release": "semantic-release",
+    "release:dry-run": "semantic-release --dry-run",
+    "release:version": "node -e \"console.log(require('./package.json').version)\"",
+    "commitlint": "commitlint --from HEAD~1"
   },
-  "url": "https://github.com/username/repository.git",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@commitlint/config-conventional": "^19.5.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.0",
     "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.0",
     "@semantic-release/release-notes-generator": "^14.0.1",
+    "commitlint": "^19.5.0",
     "semantic-release": "^24.2.0"
   }
 }
